@@ -1,0 +1,20 @@
+<h2 class="form-title text-center mb-4">Přihlášení</h2>
+<form method="post" action="/small-viewer/www/Login.php" class="form">
+    {{#loginError}}
+        <div class="alert alert-danger mb-3">{{loginError}}</div>
+    {{/loginError}}
+    <!-- login -->
+    <div class="form-group">
+        <label for="login" class="form-label">Login</label>
+        <input type="text" class="form-control" id="login" name="login" placeholder="Zadejte svůj login">
+    </div>
+
+    <!-- password -->
+    <div class="form-group">
+        <label for="password" class="form-label">Heslo</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Zadejte své heslo">
+    </div>
+
+    <!-- button -->
+    <button type="submit" class="btn btn-primary btn-block mt-4">Přihlásit se</button>
+</form>

@@ -1,0 +1,36 @@
+<header>
+    <h1><a class="header-link" href="/small-viewer/www/">Databáze prohlížeč</a></h1>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="/small-viewer/www/room/list.php">Místnosti</a></li>
+            <li><a href="/small-viewer/www/employee/list.php">Zaměstnanci</a></li>
+        </ul>
+        <div class="nav-actions">
+            {{#isLogged}}
+                <form action="/small-viewer/www/ChangePassword.php" method="post">
+                    <button type="submit" class="btn btn-warning">Změnit heslo</button>
+                </form>
+                <form action="/small-viewer/www/Logout.php" method="post">
+                    <button type="submit" class="btn btn-info btn-logout" onclick="return confirm('Opravdu se chcete odhlásit?')">
+                        Odhlásit se
+                    </button>
+                </form>
+            {{/isLogged}}
+            {{^isLogged}}
+                <form action="/small-viewer/www/Login.php" method="post">
+                    <button type="submit" class="btn btn-info btn-login">Přihlásit se</button>
+                </form>
+            {{/isLogged}}
+        </div>
+    </nav>
+</header>
+<style>
+    .btn-logout {
+        background-color: #ff2e63;
+        color: white;
+    }
+    .btn-login {
+        background-color: #3f51b5;
+        color: white;
+    }
+</style>

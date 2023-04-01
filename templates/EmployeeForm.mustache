@@ -1,0 +1,53 @@
+<h2 class="text-center mb-4">
+    {{#edit}}Edit Employee{{/edit}}
+    {{^edit}}Create Employee{{/edit}}
+</h2>
+<form method="post" class="row g-3">
+    <!--    id-->
+    <input type="hidden" name="employee_id" value="{{employee.employee_id}}">
+
+    <!--    name-->
+    <div class="col-md-6">
+        <label for="name" class="form-label">First Name</label>
+        <input type="text" class="form-control" id="name" name="name" value="{{employee.name}}">
+        {{#errors.name}}
+            <div class="invalid-feedback">{{errors.name}}</div>{{/errors.name}}
+    </div>
+    <div class="col-md-6">
+        <label for="surname" class="form-label">Last Name</label>
+        <input type="text" class="form-control" id="surname" name="surname" value="{{employee.surname}}">
+        {{#errors.surname}}
+            <div class="invalid-feedback">{{errors.surname}}</div>{{/errors.surname}}
+    </div>
+    <div class="col-md-6">
+        <label for="job" class="form-label">Job Title</label>
+        <input type="text" class="form-control" id="job" name="job" value="{{employee.job}}">
+        {{#errors.job}}
+            <div class="invalid-feedback">{{errors.job}}</div>{{/errors.job}}
+    </div>
+    <div class="col-md-6">
+        <label for="wage" class="form-label">Wage</label>
+        <div class="input-group">
+            <span class="input-group-text">$</span>
+            <input type="number" class="form-control" id="wage" name="wage" value="{{employee.wage}}">
+        </div>
+        {{#errors.wage}}
+            <div class="invalid-feedback">{{errors.wage}}</div>{{/errors.wage}}
+    </div>
+    <div class="col-md-6">
+        <label for="room_id" class="form-label">Room</label>
+        <select class="form-select" id="room_id" name="room_id">
+            <option value="">-- select --</option>
+            {{#rooms}}
+                <option value="{{room_id}}" {{#selected}}selected{{/selected}}>{{name}}</option>
+            {{/rooms}}
+        </select>
+        {{#errors.room_id}}
+            <div class="invalid-feedback">{{errors.room_id}}</div>{{/errors.room_id}}
+    </div>
+    <!--tlacitko-->
+    <div class="col-12">
+        <button type="submit" class="btn btn-primary">{{#edit}}Update{{/edit}}{{^edit}}Create{{/edit}}</button>
+    </div>
+
+</form>

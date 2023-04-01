@@ -1,0 +1,10 @@
+{
+  "db" : {
+    "host": "127.0.0.1",
+    "db": "ip_3",
+    "user": "",
+    "pass" : "",
+    "charset" : "utf8mb4"
+  },
+  "debug" : false
+}
